@@ -1,0 +1,79 @@
+@media print {
+  /* 隐藏不需要打印的元素 */
+  .no-print {
+    display: none !important;
+  }
+
+  /* 设置页面大小和边距 */
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  /* 移除背景色和阴影 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  /* 优化布局 */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: white !important;
+  }
+
+  #resume-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 调整各部分间距 */
+  .section {
+    margin-bottom: 1rem !important;
+    page-break-inside: avoid;
+  }
+
+  /* 确保文本清晰可读 */
+  h1, h2, h3, p {
+    color: black !important;
+    text-shadow: none !important;
+  }
+
+  /* 优化图片显示 */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* 调整头像大小 */
+  .profile-image {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  /* 优化技能展示 */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    page-break-inside: avoid;
+  }
+
+  /* 优化经验展示 */
+  .experience-item {
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* 优化项目展示 */
+  .project-item {
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem !important;
+  }
+} 
